@@ -10,23 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.Objects;
 
 @RestController
 public class ScheduleController {
 
-    private static final String PROGRAM_LOCATION = "/programs/schedule.ecl";
-
     private final EclipseEngine engine;
 
-    public ScheduleController() throws EclipseException, IOException, URISyntaxException {
+    public static final String PROGRAM = "program.ecl";
+
+    public ScheduleController() throws EclipseException, IOException {
         // Create the eclipse engine and load the scheduling program
         engine = new OutOfProcessEclipse(PrologServerApplication.ENGINE_OPTIONS);
-        engine.compile(new File(Objects.requireNonNull(getClass().getResource(PROGRAM_LOCATION)).toURI()));
+        engine.compile(new File(PROGRAM));
     }
 
-    @GetMapping("/schedule")
+    @GetMapping("/")
     // TODO: 07-Jun-22 Replace String return type with Schedule
     public String schedule() throws EclipseException, IOException {
         CompoundTerm result = engine.rpc("schedule(Tasks).");
