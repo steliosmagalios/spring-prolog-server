@@ -1,6 +1,6 @@
 # Spring Prolog Server
 
-A Spring application to run eclipse prolog queries from the web.
+A Spring application to run [eclipse](http://www.eclipseclp.org/) prolog queries from the web.
 
 To run the application you need to have eclipse installed in your system and specify the path
 with the -Declipse.directory parameter set to the location eclipse is installed.
