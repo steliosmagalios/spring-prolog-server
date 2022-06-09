@@ -5,7 +5,7 @@ A Spring application to run [eclipse](http://www.eclipseclp.org/) prolog queries
 **Important**: To run the application you need to have the eclipse jar file (it comes with eclipse) added to
 the local maven repository. You can use the following command for that purpose.
 
-`mvn install:install-file -Dfile=<path-to-file> -DgroupId="com.parctechnologies.eclipse" -DartifactId=eclipse -Dversion=1.0 -Dpackaging=jar`
+`mvn install:install-file -Dfile=<path-to-file> -DgroupId="com.parctechnologies.eclipse" -DartifactId=eclipse -Dversion=7.1 -Dpackaging=jar`
 
 To run the application you need to have eclipse installed in your system and specify the path
 with the -Declipse.directory parameter set to the location eclipse is installed.
